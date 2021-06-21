@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load blog_extras %}
 {% block content %}
-    <h2>Your Feed</h2>
+    <h2>Votre flux</h2>
     <div class="grid-container">
         {% for instance in page_obj %}
             {% if instance|model_type == 'Blog' %}

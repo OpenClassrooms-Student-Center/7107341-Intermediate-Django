@@ -8,7 +8,7 @@ def migrate_author_to_contributors(apps, schema_editor):
     for blog in Blog.objects.all():
         if blog.author:
             blog.contributors.add(
-                blog.author, through_defaults={'contribution': 'Primary Author'})
+                blog.author, through_defaults={'contribution': 'Auteur principal'})
 
 
 class Migration(migrations.Migration):

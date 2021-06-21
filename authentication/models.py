@@ -7,8 +7,8 @@ class User(AbstractUser):
     SUBSCRIBER = 'SUBSCRIBER'
 
     ROLE_CHOICES = (
-        (CREATOR, 'Creator'),
-        (SUBSCRIBER, 'Subscriber'),
+        (CREATOR, 'Créateur'),
+        (SUBSCRIBER, 'Abonné'),
     )
     profile_photo = models.ImageField()
     role = models.CharField(max_length=30, choices=ROLE_CHOICES)
