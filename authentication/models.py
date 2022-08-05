@@ -20,6 +20,9 @@ class User(AbstractUser):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+        #Clear any existing group before assigning new one so this works correctly on edition
+        self.groups.clear()
+        
         if self.role == self.CREATOR:
             group = Group.objects.get(name='creators')
             group.user_set.add(self)
